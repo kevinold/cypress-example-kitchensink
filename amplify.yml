@@ -30,6 +30,7 @@ test:
         - "npm start & npx wait-on http://127.0.0.1:8080"
     test:
       commands:
+        - npm run start:ci
         - npx cypress run --record --key ${CYPRESS_RECORD_KEY} --reporter mochawesome --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"
     postTest:
       commands:
